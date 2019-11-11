@@ -14,7 +14,7 @@ services:
     networks:
       lb:
         aliases:
-          - traefik-devkube
+          - traefik-<%= @config['app']['name'].lowercase %>
       default: {}
 
 networks:
