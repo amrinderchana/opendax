@@ -14,7 +14,7 @@ module Opendax
     SSH_KEY = 'config/secrets/app.key'.freeze
 
     def render
-      Dir.glob("#{TEMPLATE_PATH}/**/*.erb").each do |file|
+      Dir.glob("#{TEMPLATE_PATH}/**/*.erb", File::FNM_DOTMATCH).each do |file|
         output_file = template_name(file)
         render_file(file, output_file)
       end
